@@ -28,10 +28,12 @@ ul li {
 }
 
 body,
-h1, 
-h2, 
+h1,
+h2,
 h3,
-p {
+p,
+figure,
+blockquote {
   margin: 0;
 }
 
@@ -40,9 +42,18 @@ img {
   max-width: 100%;
 }
 
-button {
+button,
+input {
   font: inherit;
   appearance: none;
   border: 0;
+  padding: 0;
+}
+
+label {
+  display: block;
+}
+
+button {
   cursor: pointer;
 }

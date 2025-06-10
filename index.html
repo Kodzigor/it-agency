@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style-0.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -111,7 +112,7 @@
         <div class="container">
           <h2 class="title">Наші роботи</h2>
           <ul class="works-nav">
-            <li class="works-item"><button class="works-btn" type="button">Усі роботи</button></li>
+            <li class="works-item"><button class="works-btn is-active" type="button">Усі роботи</button></li>
             <li class="works-item"><button class="works-btn" type="button">Брендування</button></li>
             <li class="works-item"><button class="works-btn" type="button">Застосунки</button></li>
           </ul>
@@ -191,9 +192,9 @@
         <div class="container">
           <h2 class="title">Відгуки клієнтів</h2>
 
-          <div class="reviews-slider">
-            <ul class="reviews-list">
-              <li class="review-item">
+          <div class="reviews-slider swiper">
+            <ul class="reviews-list swiper-wrapper">
+              <li class="review-item swiper-slide">
                 <figure class="review-card">
                   <img class="review-img" src="images/review_woman.webp" alt="фото Іванни Квітки">
 
@@ -207,7 +208,35 @@
                   </blockquote>
                 </figure>
               </li>
-              <li class="review-item">
+              <li class="review-item swiper-slide">
+                <figure class="review-card">
+                  <img class="review-img" src="images/review_man.webp" alt="фото Василя Жовтого">
+
+                  <figcaption class="review-info">
+                    <h3 class="review-name">Василь Жовтий</h3>
+                    <p class="review-position">Щирий добродій</p>
+                  </figcaption>
+
+                  <blockquote class="review-text">
+                    <p>Ми отримали високоякісний продукт, який повністю задовольнив наші очікування та перевершив їх. Я рекомендую “IT-агенцію” як надійного та кваліфікованого партнера.</p>
+                  </blockquote>
+                </figure>
+              </li>
+              <li class="review-item swiper-slide">
+                <figure class="review-card">
+                  <img class="review-img" src="images/review_woman.webp" alt="фото Іванни Квітки">
+
+                  <figcaption class="review-info">
+                    <h3 class="review-name">Іванна Квітка</h3>
+                    <p class="review-position">Власниця бізнесу</p>
+                  </figcaption>
+
+                  <blockquote class="review-text">
+                    <p>Команда фахівців виявилася професійною та креативною, їхній підхід був індивідуальним та спрямованим на досягнення наших бізнес-цілей.</p>
+                  </blockquote>
+                </figure>
+              </li>
+              <li class="review-item swiper-slide">
                 <figure class="review-card">
                   <img class="review-img" src="images/review_man.webp" alt="фото Василя Жовтого">
 
@@ -269,10 +298,11 @@
         </div>
       </section>
 
-      <footer>© 2023. IT-агенція “Adilat”</footer>
+      <footer class="footer">© 2023. IT-агенція “Adilat”</footer>
     </main>
 
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src=" main.js"></script>
 </body>
 
