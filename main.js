@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Smooth scrolling for anchor links
+  //
+
   header.addEventListener('click', event => {
     if (event.target.classList.contains('menu-link')) {
       event.preventDefault();
@@ -39,6 +42,31 @@ document.addEventListener('DOMContentLoaded', () => {
       requestAnimationFrame(animation);
     }
   });
+
+  // Highlight active menu item on scroll
+  //
+
+  const sections = document.querySelectorAll('section');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  const activateMenuItem = () => {
+    for (const section of sections) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+        currentSection = section;
+      } else {
+        break;
+      }
+    }
+
+    menuLinks.forEach(link => {
+      link.classList.toggle('active', link.hash === `#${currentSection.id}`);
+    });
+  };
+
+  window.addEventListener('scroll', activateMenuItem);
 
   const swiper = new Swiper('.swiper', {
     slidesPerView: 2,
