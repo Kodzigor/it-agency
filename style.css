@@ -26,6 +26,10 @@ body {
   margin: 0 auto;
 }
 
+.wrapper {
+  overflow-x: hidden;
+}
+
 .title {
   font-family: var(--font-add);
   font-size: 48px;
@@ -58,9 +62,11 @@ body {
 .logo {
   width: 197px;
 }
+
 .menu {
   display: flex;
   gap: 45px;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-link {
@@ -91,6 +97,10 @@ body {
   transform: scaleX(1);
 }
 
+.burger {
+  display: none;
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -107,7 +117,8 @@ body {
   margin: 0 auto;
   content: '';
   display: block;
-  width: 1315px;
+  max-width: 1315px;
+  width: 100%;
   height: 672px;
   background-color: rgb(var(--c-tile));
   filter: blur(330px);
@@ -176,6 +187,7 @@ body {
 .reviews,
 .contacts {
   padding: 120px 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .about-text p:not(:last-child) {
@@ -196,6 +208,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 45px;
+  transition: all 0.3s ease-in-out;
 }
 
 .services-item {
@@ -303,6 +316,7 @@ body {
 
 .works-nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 60px;
   margin-bottom: 70px;
@@ -347,7 +361,7 @@ body {
 }
 
 .work-img {
-  width: 370px;
+  width: 100%;
   height: 230px;
   object-fit: cover;
   transition: filter 0.3s ease-in-out;

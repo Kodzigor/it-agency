@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.header');
 
   window.onscroll = () => {
-    if (window.pageYOffset > 200) {
+    if (window.pageYOffset > 100) {
       header.classList.add('sticky');
     } else {
       header.classList.remove('sticky');
@@ -97,14 +97,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const burger = document.querySelector('.burger');
+  const menu = document.querySelector('.menu');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('is-active');
+    menu.classList.toggle('open');
+  });
+
   const swiper = new Swiper('.swiper', {
-    slidesPerView: 2,
     spaceBetween: 20,
     pagination: {
       el: '.reviews-dots',
       bulletActiveClass: 'reviews-dot-active',
       bulletClass: 'reviews-dot',
       clickable: true,
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 2,
+      },
     },
 
     navigation: {

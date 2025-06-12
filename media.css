@@ -1,0 +1,139 @@
+@media (max-width: 1200px) {
+  .title {
+    font-size: calc(28px + (48 - 28) * ((100vw - 360px) / (1200 - 360)));
+    margin-bottom: calc(15px + 3vw);
+  }
+
+  .hero-title {
+    font-size: calc(40px + (150 - 40) * ((100vw - 360px) / (1200 - 360)));
+  }
+
+  .hero-text {
+    font-size: calc(18px + (24 - 18) * ((100vw - 360px) / (1200 - 360)));
+  }
+
+  .about,
+  .works,
+  .reviews,
+  .contacts {
+    padding: calc(15px + 5vw) 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .burger {
+    display: block;
+    width: 40px;
+    height: 30px;
+    background-color: transparent;
+    position: relative;
+    color: rgb(var(--c-white));
+  }
+
+  .burger-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: currentColor;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .burger::before,
+  .burger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  .burger::before {
+    top: 0;
+  }
+
+  .burger::after {
+    top: calc(100% - 2px);
+  }
+
+  .burger.is-active .burger-line {
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .burger.is-active::before {
+    transform: rotate(45deg);
+    top: 50%;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  .burger.is-active::after {
+    transform: rotate(-45deg);
+    top: 50%;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  .menu {
+    position: absolute;
+    padding: 30px;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(var(--c-smoky));
+    opacity: 0;
+    transform: translateX(200%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu.open {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .menu-link {
+    font-size: 30px;
+  }
+
+  .services-list,
+  .works-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .works-nav {
+    gap: calc(15px + 2vw) calc(15px + 3vw);
+    margin-bottom: calc(15px + 3vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper-slide-next {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-list,
+  .works-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .reviews-slider {
+    padding: 0;
+  }
+
+  .reviews-buttons {
+    display: none;
+  }
+}
+
+@media (max-height: 550px) {
+  .hero-icon {
+    display: none;
+  }
+}
