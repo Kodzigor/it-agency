@@ -408,6 +408,10 @@ body {
   margin-bottom: 70px;
 }
 
+.review-item {
+  transition: opacity 0.3s ease-in-out;
+}
+
 .review-card {
   max-width: 490px;
   background-color: rgb(var(--c-black));
@@ -446,7 +450,10 @@ body {
   font-style: italic;
   line-height: 1.2;
 }
-.reviews-buttons {
+
+.reviews-buttons .swiper-button-disabled {
+  pointer-events: none;
+  background-color: rgb(var(--c-gray));
 }
 
 .review-button-prev,
@@ -463,6 +470,18 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.review-button-prev:focus,
+.review-button-next:focus {
+  outline: 3px solid rgb(var(--c-photon));
+}
+
+.review-button-prev:hover,
+.review-button-next:hover {
+  background-color: rgba(var(--c-smoky), 1);
 }
 
 .review-button-next {
@@ -486,6 +505,11 @@ body {
   height: 20px;
   border-radius: 50%;
   background-color: rgb(var(--c-tile));
+  transition: all 0.3s ease-in-out;
+}
+
+.reviews-dot:hover {
+  background-color: rgba(var(--c-photon), 1);
 }
 
 .reviews-dot-active {
@@ -534,7 +558,14 @@ body {
   color: rgba(var(--c-white), 0.5);
   background: transparent;
   border: 1px solid rgb(var(--c-white));
+  outline: 3px solid transparent;
   border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-input:focus {
+  outline-color: rgb(var(--c-photon));
+  border-color: transparent;
 }
 
 .social {
@@ -573,6 +604,21 @@ body {
   text-align: center;
   color: rgb(var(--c-gray));
   line-height: 1.3;
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition-delay: 0.5s;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 @keyframes arrowPulse {

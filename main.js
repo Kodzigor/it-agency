@@ -68,6 +68,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', activateMenuItem);
 
+  // Filter works section
+  //
+  const filterBtns = document.querySelectorAll('.works-btn');
+  const worksList = document.querySelector('.works-list');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(filterBtn => {
+        filterBtn.classList.remove('is-active');
+      });
+      btn.classList.add('is-active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      for (const item of worksList.children) {
+        if (filterValue === 'all') {
+          item.classList.remove('hide');
+          item.classList.add('show');
+        } else if (item.classList.contains(filterValue)) {
+          item.classList.remove('hide');
+          item.classList.add('show');
+        } else {
+          item.classList.remove('show');
+          item.classList.add('hide');
+        }
+      }
+    });
+  });
+
   const swiper = new Swiper('.swiper', {
     slidesPerView: 2,
     spaceBetween: 20,
